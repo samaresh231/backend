@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "fb5a100e-c42d-4d2c-ba33-605e4d7a5d28",
+		"name": "Devsnest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/signup",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.JDJiJDEyJHF6bGxMeDRndlkwVUNGL2VHQnExOWVxdEJNQlVwdWNFVW5JZThzc3FnSjJpLk8vTTFxeUFH.7yqR3MnCZHLa7m40C1hfcGAXOn0co-ifPoOyOjsbY1w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "noOfAdult",
+						"value": "2",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n \"user\": {\n   \"email\": \"priya1234@gmail.com\",\n   \"password\":\"1234\",\n    \"name\":\"priya\"\n\n }\n   \n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"signup"
+					]
+				},
+				"description": "Signing up of User"
+			},
+			"response": []
+		},
+		{
+			"name": "login of user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjA4NTc2NDAwLCJleHAiOjE2MDg2NjI4MDAsImp0aSI6IjcyZmUyODlkLTU3MWItNDNlNy1hMzY0LTAyYmQxNDMzODlkNyJ9.PMz-ygtGbkaKDkkZJiZkoo8uytnMZIIqPh6YkXZxCvM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.api+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n \"user\": {\n   \"email\": \"priya12@gmail.com\",\n   \"password\":\"hello123\"\n\n }\n   \n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjA4NTgyMzA4LCJleHAiOjE2MDg2Njg3MDgsImp0aSI6IjM0NzcwMDI3LTM1ZDAtNGE1NS1iY2E0LTlhMDI3NTNkNTUyMSJ9.uUX_wIdfHPs6Y3uhBJUnfrA0rrxN_P6i7X5Ay7p7dRw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.api+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": {\n        \"id\": \"6\",\n        \"type\": \"users\",\n      \n        \"attributes\": {\n            \"email\": \"priya12@gmail.com\",\n            \"name\": \"jjjj\",\n            \"bio\": \"\",\n            \"image-url\": \"\",\n            \"password\": \"hello\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjA4NTcyMTA2LCJleHAiOjE2MDg2NTg1MDYsImp0aSI6IjBkYzNkZmVkLTg2ZTQtNDMxOS1iMDJlLWFkMTUzNDcyMGFiMCJ9.bKvA28psR_gBk53EhriQIAtOb-_6CzSnO_xl-PfAXvE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.api+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": {\n        \"id\": \"6\",\n        \"type\": \"users\",\n       \n        \"attributes\": {\n            \"email\": \"priya12@gmail.com\",\n             \"password\": \"priya123\",\n             \"password_confirmation\": \"priya123\",\n               \"current_password\": \"123\"\n\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update fields",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjA4NTgyMzA4LCJleHAiOjE2MDg2Njg3MDgsImp0aSI6IjM0NzcwMDI3LTM1ZDAtNGE1NS1iY2E0LTlhMDI3NTNkNTUyMSJ9.uUX_wIdfHPs6Y3uhBJUnfrA0rrxN_P6i7X5Ay7p7dRw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.api+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": {\n        \"id\": \"6\",\n        \"type\": \"users\",\n      \n        \"attributes\": {\n            \"email\": \"priya12@gmail.com\",\n            \"name\": \"jjjj\",\n            \"bio\": \"\",\n            \"image-url\": \"\",\n            \"password\": \"hello\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
