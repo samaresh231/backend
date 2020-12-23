@@ -8,6 +8,7 @@ class GbuMailer < ApplicationMailer
   def reminder
     @greeting = "Hi"
 
-    mail to: "to@example.org"
+    mail to: "aditig006@gmail.com",
+         subject: "Try mail"
   end
 end
