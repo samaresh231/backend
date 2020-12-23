@@ -6,9 +6,10 @@ class GbuMailer < ApplicationMailer
   #   en.gbu_mailer.reminder.subject
   #
   def reminder
-    @greeting = "Hi"
+    @link = "devsnest.in"
 
-    mail to: "aditig006@gmail.com",
-         subject: "Try mail"
+
+    mail to: "guptaa.aditi02@gmail.com",
+         subject: "GBU reminder"
   end
 end
