@@ -16,6 +16,8 @@
 * JSON API Resources https://jsonapi-resources.com/v0.10/guide/
 * https://github.com/waiting-for-dev/devise-jwt
 
+#Postman Collection for local testing
+https://www.getpostman.com/collections/61a29ce68c92931f5be2
 
 
 ## Yet to add
