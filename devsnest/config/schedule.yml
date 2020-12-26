@@ -1,0 +1,4 @@
+email_job:
+  cron: "30 04 * * sun"
+  class: "EmailWorker"
+  queue: email_worker

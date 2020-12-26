@@ -5,11 +5,19 @@ class GbuMailer < ApplicationMailer
   #
   #   en.gbu_mailer.reminder.subject
   #
-  def reminder
+  def self.send_request
+    emails = User.pluck(:email)
+    
+    emails.each do |email|
+      reminder(email).deliver_now   
+    end
+  end
+
+  def reminder(email)
     @link = "devsnest.in"
-
-
-    mail to: "guptaa.aditi02@gmail.com",
+  
+ 
+    mail to: email,
          subject: "GBU reminder"
   end
 end

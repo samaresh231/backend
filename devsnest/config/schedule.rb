@@ -8,8 +8,8 @@
 #     command "echo 'you can use raw cron syntax too'"
 #   end
   
-every :day, :at => '04:37pm' do
-    command "GbuMailer.reminder().deliver_now"
-end
+# every :day, :at => '04:37pm' do
+#     rake "batch:send_messages"
+ 
 
 # GbuMailer.reminder().deliver_now
