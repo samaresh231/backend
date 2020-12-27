@@ -10,12 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_18_140700) do
+ActiveRecord::Schema.define(version: 2020_12_24_035944) do
 
   create_table "jwt_blacklists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "jti", null: false
     t.datetime "exp"
     t.index ["jti"], name: "index_jwt_blacklists_on_jti"
+  end
+
+  create_table "mentee_feeds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "user_id"
+    t.integer "mentee_id"
+    t.text "feedback"
+    t.integer "efforts"
+    t.integer "understanding"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "mentor_feeds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "user_id"
+    t.integer "mentor_id"
+    t.text "feedback"
+    t.integer "timeGiven"
+    t.integer "capability"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "mmts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "mentor_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

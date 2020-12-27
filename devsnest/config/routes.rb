@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       jsonapi_resources :users
+      jsonapi_resources :mmts
+      jsonapi_resources :mentor_feeds
+      jsonapi_resources :mentee_feeds
     end
   end
 end
