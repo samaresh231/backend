@@ -1,4 +1,4 @@
 class MentorFeed < ApplicationRecord
-    enum timeGiven: [:green, :yellow, :red]
-    enum capability: [:green, :yellow, :red]
+    enum timeGiven: [:green, :yellow, :red], _suffix: true
+    enum capability: [:green, :yellow, :red], _prefix: :comments
 end

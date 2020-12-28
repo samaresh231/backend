@@ -4,18 +4,13 @@ module Api
         attributes :user_id, :mentor_id
         def self.updatable_fields(context)
           if context[:user].normal?
-            super - [:kind]
-          else
-            super
+            super 
           end
         end
   
         def self.creatable_fields(context)
           if context[:user].normal?
-            super - [:kind]
-          else
-            super
-          end
+            super 
         end
       end
     end
