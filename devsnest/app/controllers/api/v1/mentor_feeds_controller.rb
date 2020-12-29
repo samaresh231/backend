@@ -8,6 +8,6 @@ class Api::V1::MentorFeedsController < ApplicationController
     end
 
     def authorize_member
-    return render_forbidden unless current_user.id == params[:id].to_i || current_user.admin?
+        return render_forbidden  unless current_user.id == params[:id].to_i || current_user.normal?
     end
 end
