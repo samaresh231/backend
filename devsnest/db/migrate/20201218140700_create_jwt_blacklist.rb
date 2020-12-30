@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateJwtBlacklist < ActiveRecord::Migration[6.0]
   def change
     create_table :jwt_blacklists do |t|
@@ -7,4 +9,3 @@ class CreateJwtBlacklist < ActiveRecord::Migration[6.0]
     add_index :jwt_blacklists, :jti
   end
 end
-

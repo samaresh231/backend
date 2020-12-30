@@ -24,7 +24,6 @@ module Api
       def fetchable_fields
         super - [:password]
       end
-      
     end
   end
 end
