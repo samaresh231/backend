@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :jwt_authenticatable,
          :registerable,
          jwt_revocation_strategy: JwtBlacklist
-
-  enum kind: %i[normal admin]
+  enum kind: %i[normal admin super_admin]
 end
+
