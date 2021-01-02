@@ -1,4 +1,4 @@
-class CreateMenteeFeedbacks < ActiveRecord::Migration[6.0]
+class CreateMenteeFeeds < ActiveRecord::Migration[6.0]
   def change
     create_table :mentee_feeds do |t|
       t.string :user_id

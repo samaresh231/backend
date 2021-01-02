@@ -1,4 +1,4 @@
-class CreateMentorFeedbacks < ActiveRecord::Migration[6.0]
+class CreateMentorFeeds < ActiveRecord::Migration[6.0]
   def change
     create_table :mentor_feeds do |t|
       t.string :user_id
