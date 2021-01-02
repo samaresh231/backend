@@ -1,4 +1,4 @@
-class Api::V1::MentorFeedsController < ApplicationController
+class Api::V1::MentorFeedbacksController < ApplicationController
     include JSONAPI::ActsAsResourceController
     before_action :authenticate_user!
     before_action :authorize_member, only: [:update, :delete]

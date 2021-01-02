@@ -1,7 +1,7 @@
 module Api
     module V1
-      class MenteeFeedResource < JSONAPI::Resource
-        attributes :user_id, :mentee_id, :feedback, :efforts, :understanding
+      class MentorFeedbackResource < JSONAPI::Resource
+        attributes :user_id, :mentor_id, :feedback, :timeGiven, :capability
         def self.updatable_fields(context)
           if context[:user].normal?
             super 
@@ -13,7 +13,7 @@ module Api
             super 
           end
         end
-        
+  
       end
     end
   end
