@@ -8,6 +8,6 @@ class Api::V1::MenteeFeedbacksController <
     end
 
     def authorize_member
-        return render_forbidden unless  current_user.id == params[:id].to_i || current_user.normal?
+        return render_forbidden unless current_user.id == params[:id].to_i #we dont need admin to update fields
     end
 end
