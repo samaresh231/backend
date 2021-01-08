@@ -12,7 +12,7 @@ module Api
       end
 
       def authorize_member
-        return head 403 unless current_user.id == params[:id].to_i # we dont need admin to update fields
+        return head 403 unless current_user.id == MenteeFeedback.find_by(id: params[:id]).user_id
       end
     end
   end
