@@ -3,27 +3,27 @@
 module Api
   module V1
     class UserResource < JSONAPI::Resource
-      attributes :email, :name, :kind, :bio, :image_url, :password
+      attributes :email, :name, :kind, :bio, :image_url, :password, :discord_id, :active, :role, :username, :buddy
 
-      def self.updatable_fields(context)
-        if context[:user].normal?
-          super - [:kind]
-        else
-          super
-        end
-      end
+      # def self.updatable_fields(context)
+      #   if context[:user].normal?
+      #     super - [:kind]
+      #   else
+      #     super
+      #   end
+      # end
 
-      def self.creatable_fields(context)
-        if context[:user].normal?
-          super - [:kind]
-        else
-          super
-        end
-      end
+      # def self.creatable_fields(context)
+      #   if context[:user].normal?
+      #     super - [:kind]
+      #   else
+      #     super
+      #   end
+      # end
 
-      def fetchable_fields
-        super - [:password]
-      end
+      # def fetchable_fields
+      #   super - [:password]
+      # end
     end
   end
 end
