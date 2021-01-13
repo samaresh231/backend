@@ -36,6 +36,7 @@ Style/Documentation:
     - 'app/models/user.rb'
     - 'app/resources/api/v1/user_resource.rb'
     - 'app/workers/send_email_worker.rb'
+    - 'app/workers/mentor_worker.rb'
     - 'config/application.rb'
     - 'db/migrate/20201218111837_devise_create_users.rb'
     - 'db/migrate/20201218140700_create_jwt_blacklist.rb'

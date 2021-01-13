@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       jsonapi_resources :mmts
       jsonapi_resources :mentor_feedbacks
       jsonapi_resources :mentee_feedbacks
+      jsonapi_resources :writeups, only: :create
       jsonapi_resources :contents, only: %i[index show]
     end
   end

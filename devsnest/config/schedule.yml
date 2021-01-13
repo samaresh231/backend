@@ -1,0 +1,5 @@
+mentor_job:
+  # cron: "*/1 * * * *"
+  cron: "30 04 * * sun"
+  class: "MentorWorker"
+  queue: mentor_worker
