@@ -3,15 +3,15 @@ class CreateContents < ActiveRecord::Migration[6.0]
     create_table :contents do |t|
     	t.string :unique_id
     	t.string :parent_id
-    	t.string :content_name
-    	t.integer :content_type
-    	t.string :content_article_link
-    	t.string :content_video_link
-        t.string :question_link
-        t.boolean :extra_question
-
-
+    	t.string :name
+    	t.integer :data_type
+    	t.string :link
+      t.integer :priority
+    	t.string :extra_link1
+      t.string :extra_link2
       t.timestamps
     end
+    add_index :contents, :parent_id
+    add_index :contents, :unique_id
   end
 end

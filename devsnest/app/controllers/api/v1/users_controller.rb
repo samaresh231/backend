@@ -4,9 +4,9 @@ module Api
   module V1
     class UsersController < ApplicationController
       include JSONAPI::ActsAsResourceController
-      #before_action :authenticate_user!
-      #before_action :authorize_member, only: %i[update delete]
-      #before_action :authorize_collection, only: [:create]
+      # before_action :authenticate_user!
+      # before_action :authorize_member, only: %i[update delete]
+      # before_action :authorize_collection, only: [:create]
 
       def context
         { user: current_user }

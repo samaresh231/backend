@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Content < ApplicationRecord
-	enum Content_type: %i[article video both]
+  enum data_type: %i[question video article topic subtopic]
 end

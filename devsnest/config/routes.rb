@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'curriculam'=>'contents#curriculam', as: 'curriculam'
   devise_for :users,
              path: '',
              path_names: {
@@ -21,7 +20,6 @@ Rails.application.routes.draw do
       jsonapi_resources :mentor_feedbacks
       jsonapi_resources :mentee_feedbacks
       jsonapi_resources :contents
-      get 'curriculam'=>'contents#curriculam', as: 'curriculam'
     end
   end
 end
