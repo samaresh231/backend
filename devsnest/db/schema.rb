@@ -15,14 +15,24 @@ ActiveRecord::Schema.define(version: 2021_01_13_192903) do
   create_table "contents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "unique_id"
     t.string "parent_id"
-    t.string "content_name"
-    t.integer "content_type"
-    t.string "content_article_link"
-    t.string "content_video_link"
-    t.string "question_link"
-    t.boolean "extra_question"
+    t.string "name"
+    t.integer "data_type"
+    t.string "link"
+    t.integer "priority"
+    t.string "extra_link1"
+    t.string "extra_link2"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["parent_id"], name: "index_contents_on_parent_id"
+    t.index ["unique_id"], name: "index_contents_on_unique_id"
+  end
+
+  create_table "gbus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "description"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["created_at"], name: "index_gbus_on_created_at"
   end
 
   create_table "jwt_blacklists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
