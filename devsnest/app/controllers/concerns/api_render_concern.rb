@@ -2,7 +2,7 @@
 
 module ApiRenderConcern
   extend ActiveSupport::Concern
-  def api_render status_code, data = {}
+  def api_render(status_code, data = {})
     render json: {
       data: {
         id: (data[:id] || data['id']),
@@ -20,7 +20,7 @@ module ApiRenderConcern
     api_render 401, code: :unauthorized, errors: ['Unauthorized']
   end
 
-  def render_not_found code = nil
+  def render_not_found(code = nil)
     code = "#{code}_not_found" if code.present?
     api_render 404, code: code || :not_found, errors: ['Not Found']
   end
