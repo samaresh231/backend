@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_15_114708) do
+
+ActiveRecord::Schema.define(version: 2021_01_15_133157) do
 
   create_table "contents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "unique_id"
@@ -60,6 +61,25 @@ ActiveRecord::Schema.define(version: 2021_01_15_114708) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["mentor_id"], name: "index_mmts_on_mentor_id"
     t.index ["user_id"], name: "index_mmts_on_user_id", unique: true
+  end
+
+  create_table "submissions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "content_id"
+    t.integer "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id", "content_id"], name: "index_submissions_on_user_id_and_content_id", unique: true
+  end
+
+  create_table "user_progresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "user_id"
+    t.string "unique_id"
+    t.boolean "question_status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_status"], name: "index_user_progresses_on_question_status"
+    t.index ["unique_id"], name: "index_user_progresses_on_unique_id", unique: true
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
