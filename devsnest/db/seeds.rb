@@ -7,10 +7,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# User.create(name: 'manish', email:'manish12@gmail.com', password: '123456', kind:'admin')
-# User.create(name: 'mohit', email:'manish123@gmail.com', password: '123457', kind:'normal')
-# User.create(name: 'kohit', email:'manish124@gmail.com', password: '123458', kind:'normal')
-# User.create(name: 'rohit', email:'manish125@gmail.com', password: '123459', kind:'admin')
+# User.create(name: 'manish', email:'manish12@gmail.com', password: '123456')
+# User.create(name: 'mohit', email:'manish123@gmail.com', password: '123457')
+# User.create(name: 'kohit', email:'manish124@gmail.com', password: '123458')
+# User.create(name: 'rohit', email:'manish125@gmail.com', password: '123459')
+User.create(name: 'ayush', password: '123459')
 # #Mmt.create(user_id: 1, mentor_id: 2)
 
 Content.create(unique_id: 'algo', parent_id: nil, name: 'Algorithims', data_type: 3, link: nil, priority: 0)
