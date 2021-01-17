@@ -2,7 +2,6 @@
 
 class ApplicationController < ActionController::API
   include ApiRenderConcern
-
   def render_resource(resource)
     if resource.errors.empty?
       render json: resource
