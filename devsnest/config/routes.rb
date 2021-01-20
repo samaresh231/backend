@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       jsonapi_resources :users do
         collection do
-          get :report
+          get :report, :leaderboard
         end
       end
       jsonapi_resources :mmts

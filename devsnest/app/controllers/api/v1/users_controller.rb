@@ -15,6 +15,11 @@ module Api
         res = Submission.user_report(days, user.id)
         render json: res
       end
+
+      def leaderboard
+        scoreboard = User.order(score: :desc)
+        render json: scoreboard
+      end
     end
   end
 end
