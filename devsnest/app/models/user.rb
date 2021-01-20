@@ -9,6 +9,7 @@ class User < ApplicationRecord
   serialize :role, Array
   after_create :assign_mentor
 
+ 
   def assign_mentor
     mentor_list = [8, 9, 10]
     id = self.id
