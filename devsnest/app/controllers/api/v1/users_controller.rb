@@ -20,6 +20,7 @@ module Api
         scoreboard = User.order(score: :desc)
         render json: scoreboard
       end
+      
     end
   end
 end
