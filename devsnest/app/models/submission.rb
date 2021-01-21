@@ -5,6 +5,7 @@ class Submission < ApplicationRecord
   has_one :content
 
 
+
   def self.user_report(days, user_id)
     total_ques = Content.where(data_type: 0).count
 
@@ -41,5 +42,6 @@ class Submission < ApplicationRecord
     submission.save
     user.save
     submission
+
   end
 end
