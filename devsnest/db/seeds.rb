@@ -34,6 +34,8 @@
 # Content.create(unique_id: 'Q11', parent_id: 'String', name: 'Valid Palindrome', data_type: 0, link: 'https://leetcode.com/problems/valid-palindrome-ii/ ', priority: 14)
 # Content.create(unique_id: 'Q12', parent_id: 'String', name: 'Palindromic Substrings', data_type: 0, link: 'https://leetcode.com/problems/palindromic-substrings/', priority: 15)
 
+groupcalls.create(id: 'manish', user_id: 'abcde', choice: '123450', email: 'manish1250@gmail.com')
+
 # filter get apis
 # http://localhost:3000/api/v1/contents/								=>show Algo(default) subtopics
 
