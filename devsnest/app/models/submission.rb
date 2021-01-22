@@ -29,11 +29,10 @@ class Submission < ApplicationRecord
 
       user.score += 10 if choice.zero?
       user.save
-      return
+      return submission
     end
 
     user.score -= 10 if (submission.status == 'done') && (choice != 0)
-
     user.score += 10 if (submission.status == 'notdone') && choice.zero?
 
     submission.status = choice
