@@ -41,4 +41,4 @@ Content.create(unique_id: 'Q12', parent_id: 'String', name: 'Palindromic Substri
 # http://localhost:3000/api/v1/contents?filter[parent_id="String"  =>string question
 # http://localhost:3000/api/v1/contents?filter[parent_id="Array"  =>arrays question
 
-# Submission.create(discord_id: "4", unique_id: "Q6", question_status: false)
+# Submission.create(user_id: 1, content_id: 1, status: 1)

@@ -10,12 +10,12 @@ class User < ApplicationRecord
   after_create :assign_mentor
 
   def assign_mentor
-    mentorList = [9, 10, 11]
+    mentor_list = [8, 9, 10]
     id = self.id
-    index = id % mentorList.length
-    mmt = Mmt.new(user_id: id, mentor_id: mentorList[index])
+    index = id % mentor_list.length
+    mmt = Mmt.new(user_id: id, mentor_id: mentor_list[index])
     mmt.save
-    @user = User.find_by(id: mentorList[index])
+    @user = User.find_by(id: mentor_list[index])
     mentor_name = @user.name
   end
 
