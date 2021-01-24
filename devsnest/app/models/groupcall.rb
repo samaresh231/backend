@@ -19,13 +19,16 @@ class Groupcall < ApplicationRecord
     groups = []
     cur_group = []
 
+    group_no = 1
+
     Groupcall.where(choice: 'yes', week: week, year: year).each do |gc|
-      gc.update(group_id: count)
+      gc.update(group_id: group_no)
       count += 1
       count = count%4
-      if count == 0
-        groups.append(cur_group) if cur_group != []
+      if count == 0 and cur_group != []
+        groups.append(cur_group)
         cur_group = []
+        group_no += 1
       end
       discord_id = User.find_by(id:gc.user_id).discord_id
       cur_group.append({ user_id: gc.user_id, discord_id: discord_id })
