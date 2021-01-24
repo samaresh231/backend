@@ -21,3 +21,6 @@
 ## Yet to add
 * Rubocop
 * Rspec(Testcases)
+
+## POSTMAN Collection link
+* https://www.getpostman.com/collections/8b2a04eac3071301dc0a
