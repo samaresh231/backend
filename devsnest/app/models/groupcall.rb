@@ -28,8 +28,9 @@ class Groupcall < ApplicationRecord
         cur_group = []
       end
       discord_id = User.find_by(id:gc.user_id).discord_id
-      cur_group.append({ user_id: gc.user_id, discord_id: discord_id})
+      cur_group.append({ user_id: gc.user_id, discord_id: discord_id })
     end
+    groups.append(cur_group)
     return groups
   end
 end

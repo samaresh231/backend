@@ -15,7 +15,7 @@ module Api
         return render_error('User or Content not found') if user.nil? || content.nil?
 
         submission = Submission.create_submission(user.id, content.id, choice)
-        render json: submission
+        render_success(submission.as_json.merge("type":"submissions"))
       end
     end
   end
