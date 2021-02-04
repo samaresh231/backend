@@ -7,7 +7,7 @@ class User < ApplicationRecord
          :registerable,
          jwt_revocation_strategy: JwtBlacklist
   serialize :role, Array
-  after_create :assign_mentor
+  # after_create :assign_mentor
 
  
   def assign_mentor
