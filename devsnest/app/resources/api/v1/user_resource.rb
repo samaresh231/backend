@@ -7,13 +7,13 @@ module Api
       attributes :mentor_name, :mentor_discord_id
 
       def mentor_name
-        mentor_id = Mmt.where(user_id: @model.id).first.mentor_id          # use dig
-        User.where(id: mentor_id).first.name
+        mentor = Mmt.where(user_id: @model.id).first
+        mentor.present? ? User.where(id: mentor.mentor_id).first.name : nil
       end
 
       def mentor_discord_id
-        mentor_id = Mmt.where(user_id: @model.id).first.mentor_id          # use dig
-        User.where(id: mentor_id).first.discord_id
+        mentor = Mmt.where(user_id: @model.id).first
+        mentor.present? ? User.where(id: mentor.mentor_id).first.discord_id : nil
       end
 
 
