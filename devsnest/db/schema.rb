@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(version: 2021_01_20_175959) do
     t.index ["unique_id"], name: "index_contents_on_unique_id"
   end
 
+  create_table "gbus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "groupcalls", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "choice"

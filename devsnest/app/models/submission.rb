@@ -3,6 +3,8 @@
 class Submission < ApplicationRecord
   enum status: %i[done notdone doubt]
   has_one :content
+  belongs_to :user, counter_cache: true
+  after_save :update_user_stats
 
   def self.user_report(days, user_id)
     total_ques = Content.where(data_type: 0).count
@@ -39,5 +41,11 @@ class Submission < ApplicationRecord
     submission.save
     user.save
     submission
+  end
+
+  private
+    def update_user_stats
+      user.update(score: user.get_scorecard)
+    end
   end
 end

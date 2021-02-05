@@ -39,6 +39,8 @@ class User < ApplicationRecord
 
   def self.get_scorecard
     # change it to actual scorecard
-    User.pluck(:id).sort
+    Rails.cache.fetch([cache_key, __method__]) do
+      User.pluck(:id).sort
+    end
   end
 end
