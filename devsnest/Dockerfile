@@ -10,6 +10,6 @@ RUN gem install bundler
 COPY ./Gemfile  ./
 COPY ./Gemfile.lock ./
 
-RUN bundle install
+RUN bundle install --without development test
 COPY ./ ./
 CMD ["bundle", "exec","puma"]
