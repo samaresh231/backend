@@ -4,7 +4,7 @@ RUN apk add \
     build-base \
     bash \
     mariadb-dev \
-    tzdata \
+    tzdata
 
 RUN gem install bundler
 COPY ./Gemfile  ./
