@@ -17,11 +17,11 @@ module Api
       end
 
       def leaderboard
-
         page = params[:page].to_i
         offset = (page - 1)* 10
         scoreboard = User.order(score: :desc).limit(10).offset(offset)
-        render json: scoreboard
+        pages_count = User.count%10 == 0? User.count/10 : User.count/10 + 1
+        render json: { scoreboard: scoreboard, count: pages_count }
       end
     end
   end
