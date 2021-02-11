@@ -22,4 +22,9 @@ class ApplicationController < ActionController::API
       ]
     }, status: :bad_request
   end
+
+  def bot_authorization
+    bot_token = request.headers["Authorization"]
+    return render_forbidden if bot_token != ENV['DISCORD_TOKEN']
+  end
 end
