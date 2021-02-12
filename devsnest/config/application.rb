@@ -36,8 +36,8 @@ module Devsnest
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
       Sentry.init do |config|
-      config.dsn = 'https://bdb04452c74e4fc7868b6b841e1577ef@o520975.ingest.sentry.io/5632078'
-      config.breadcrumbs_logger = [:active_support_logger]
+        config.dsn = ENV["SENTRY_DSN"]
+        config.breadcrumbs_logger = [:active_support_logger]
 
       # To activate performance monitoring, set one of these options.
       # We recommend adjusting the value in production:
