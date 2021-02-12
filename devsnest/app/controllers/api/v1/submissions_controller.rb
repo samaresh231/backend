@@ -4,7 +4,6 @@ module Api
   module V1
     class SubmissionsController < ApplicationController
       include JSONAPI::ActsAsResourceController
-      before_action :bot_authorization
 
       def create
         discord_id = params['data']['attributes']['discord_id']

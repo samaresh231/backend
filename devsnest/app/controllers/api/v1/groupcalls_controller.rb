@@ -4,7 +4,6 @@ module Api
   module V1
     class GroupcallsController < ApplicationController
       include JSONAPI::ActsAsResourceController
-      before_action :bot_authorization
 
       def index
       groups = Groupcall.fetch_groups

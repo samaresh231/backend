@@ -2,6 +2,7 @@
 
 class ApplicationController < ActionController::API
   include ApiRenderConcern
+  before_action :bot_authorization
   def render_resource(resource)
     if resource.errors.empty?
       render json: resource
