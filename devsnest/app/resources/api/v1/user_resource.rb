@@ -4,7 +4,8 @@ module Api
   module V1
     class UserResource < JSONAPI::Resource
       attributes :email, :name, :password, :discord_id, :active, :role, :username, :buddy, :score
-      attributes :mentor_name, :mentor_discord_id
+      # attributes :mentor_name, :mentor_discord_id
+
 
       def mentor_name
         mentor = Mmt.where(user_id: @model.id).first
